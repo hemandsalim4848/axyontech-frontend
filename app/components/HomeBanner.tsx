@@ -6,25 +6,27 @@ import Link from 'next/link';
 
 const SLIDES = [
   {
-    tag: "Next-Gen Display Solutions",
-    title: "Elite",
-    titleStroke: "Systems",
-    desc: "Engineering premium visual hardware for commercial and residential deployments. Precision-built. Performance-driven.",
-    img: "",
+    tag: "Next-Gen Mobile Cases",
+    title: "Kevlar",
+    titleStroke: "Cases",
+    desc: "Engineered with real Kevlar fibers, this case offers unmatched durability without compromising on style.",
+    img: "https://aztechmea.com/wp-content/uploads/2025/12/kevlar_sunset_15_-16.png",
     badgeLabel: "New Release",
-    badgeTitle: "Aztech 22″ LED Monitor",
+    badgeTitle: "For Iphone 16 Pro",
     link: "/products"
   },
   {
-    tag: "Immersive Audio Engineering",
-    title: "Sonic",
-    titleStroke: "Clarity",
-    desc: "High-fidelity audio components designed for crystal clear soundscapes in any environment. Experience the depth of sound.",
-    img: "", // Replace with your 2nd image
-    badgeLabel: "Studio Grade",
-    badgeTitle: "Pro Series Audio",
+    tag: "High-Performance Power Delivery",
+    title: "Power",
+    titleStroke: "Efficiency",
+    desc: "Reliable and energy-efficient power supply units engineered to deliver stable performance, advanced protection, and consistent power for gaming, workstation, and enterprise systems.",
+    img: "https://aztechmea.com/wp-content/uploads/2026/06/pwer-supply-unit.png", // Replace with your image
+    badgeLabel: "80 PLUS Certified",
+    badgeTitle: "Premium PSU Series",
     link: "/products"
-  },
+},
+
+
   {
     tag: "Industrial Connectivity",
     title: "Total",
