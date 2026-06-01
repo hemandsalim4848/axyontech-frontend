@@ -9,9 +9,9 @@ async function getProduct(slug: string) {
 
   try {
     const res = await fetch(
-      `${STRAPI_URL}/api/products?filters[Slug][$eq]=${slug}&populate=*`,
-      { next: { revalidate: 0 } }
-    );
+  `${STRAPI_URL}/api/products?filters[Slug][$eq]=${slug}&populate=*`,
+  { cache: "no-store" }
+);
 
     if (!res.ok) return null;
 
