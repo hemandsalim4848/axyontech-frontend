@@ -28,9 +28,9 @@ export default function Home() {
         <CategoryGrid />
       </FadeSection>
      
-      <FadeSection>
+      {/* <FadeSection>
         <FeaturedProducts />
-      </FadeSection>
+      </FadeSection> */}
        <FadeSection>
         <WhyUs />
       </FadeSection>
