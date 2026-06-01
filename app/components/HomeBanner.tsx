@@ -25,18 +25,16 @@ const SLIDES = [
     badgeTitle: "Premium PSU Series",
     link: "/products"
 },
-
-
-  {
-    tag: "Industrial Connectivity",
-    title: "Total",
-    titleStroke: "Control",
-    desc: "Seamlessly integrate your hardware ecosystem with our advanced connectivity hubs. Reliability at its core.",
-    img: "", // Replace with your 3rd image
-    badgeLabel: "Smart Hub",
-    badgeTitle: "Connect X1 Matrix",
+ {
+    tag: "Interactive Learning & Collaboration",
+    title: "Smart",
+    titleStroke: "Interaction",
+    desc: "Advanced interactive flat panels designed to enhance classrooms, meeting rooms, and collaborative spaces with responsive touch technology, vibrant visuals, and seamless connectivity.",
+    img: "https://aztechmea.com/wp-content/uploads/2025/12/Ideaflow-pro.png", // Replace with your image
+    badgeLabel: "Multi-Touch Display",
+    badgeTitle: "Interactive Panel Series",
     link: "/products"
-  }
+}
 ];
 
 export default function HomeBanner() {

@@ -6,7 +6,7 @@ import WhyUs from './components/WhyUs';
 import BrandShowcase from './components/BrandShowcase';
 import { ScrollReveal } from "./components/ScrollReveal";
 import FadeSection from "./components/FadeSection";
-
+import AboutSection from './components/AboutSection';
 // This is your "Database" for now. You can add more later!
 const products = [
   { id: 1, name: "4K Curved Monitor", category: "Monitors", price: "View Specs", img: "https://via.placeholder.com/300" },
@@ -28,12 +28,13 @@ export default function Home() {
         <CategoryGrid />
       </FadeSection>
      
-      {/* <FadeSection>
-        <FeaturedProducts />
-      </FadeSection> */}
-       <FadeSection>
-        <WhyUs />
+      <FadeSection>
+        {/* <FeaturedProducts /> */}
+        <AboutSection/>
       </FadeSection>
+       {/* <FadeSection>
+        <WhyUs />
+      </FadeSection> */}
       
 
 
