@@ -10,28 +10,28 @@ const CATEGORIES = [
     desc: 'Interactive touch solutions', 
     icon: <LayoutGrid size={20} />, 
     href: '/products/flat-panels',
-    img: 'http://localhost:1337/uploads/flat_panel_thumb.png' 
+    img: '' 
   },
   { 
     name: 'Professional Monitors', 
     desc: 'High-accuracy displays', 
     icon: <Monitor size={20} />, 
     href: '/products/monitors',
-    img: 'http://localhost:1337/uploads/monitor_thumb.png' 
+    img: '' 
   },
   { 
     name: 'Audio Systems', 
     desc: 'Studio-grade acoustics', 
     icon: <Speaker size={20} />, 
     href: '/products/audio',
-    img: 'http://localhost:1337/uploads/audio_thumb.png' 
+    img: '' 
   },
   { 
     name: 'Power Units', 
     desc: 'Industrial power supply', 
     icon: <Zap size={20} />, 
     href: '/products/power',
-    img: 'http://localhost:1337/uploads/power_thumb.png' 
+    img: '' 
   },
 ];
 

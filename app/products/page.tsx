@@ -1,4 +1,4 @@
-// // This is a Server Component by default
+// This is a Server Component by default
 // export default async function ProductCatalogue() {
 //   const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -38,3 +38,11 @@
 //     </div>
 //   );
 // }
+
+export default async function ProductCatalogue() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1>Page coming soon</h1>
+    </main>
+  );
+}

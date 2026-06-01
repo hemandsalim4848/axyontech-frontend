@@ -10,7 +10,7 @@ const SLIDES = [
     title: "Elite",
     titleStroke: "Systems",
     desc: "Engineering premium visual hardware for commercial and residential deployments. Precision-built. Performance-driven.",
-    img: "http://localhost:1337/uploads/22_Monitor_removebg_preview_a504760046.png",
+    img: "",
     badgeLabel: "New Release",
     badgeTitle: "Aztech 22″ LED Monitor",
     link: "/products"
@@ -20,7 +20,7 @@ const SLIDES = [
     title: "Sonic",
     titleStroke: "Clarity",
     desc: "High-fidelity audio components designed for crystal clear soundscapes in any environment. Experience the depth of sound.",
-    img: "http://localhost:1337/uploads/FD_580_452_scaled_54a090a6fe.png", // Replace with your 2nd image
+    img: "", // Replace with your 2nd image
     badgeLabel: "Studio Grade",
     badgeTitle: "Pro Series Audio",
     link: "/products"
@@ -30,7 +30,7 @@ const SLIDES = [
     title: "Total",
     titleStroke: "Control",
     desc: "Seamlessly integrate your hardware ecosystem with our advanced connectivity hubs. Reliability at its core.",
-    img: "http://localhost:1337/uploads/22_Monitor_removebg_preview_a504760046.png", // Replace with your 3rd image
+    img: "", // Replace with your 3rd image
     badgeLabel: "Smart Hub",
     badgeTitle: "Connect X1 Matrix",
     link: "/products"

@@ -1,8 +1,8 @@
-// "use client";
-// import React, { useEffect, useState } from 'react';
-// import { motion } from 'framer-motion';
-// import { ArrowUpRight, Box } from 'lucide-react';
-// import Link from 'next/link';
+"use client";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Box } from 'lucide-react';
+import Link from 'next/link';
 
 // export default function FeaturedProducts() {
 //   const [products, setProducts] = useState([]);
@@ -109,3 +109,11 @@
 //     </section>
 //   );
 // }
+
+export default function FeaturedProducts() {
+    return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1>Products coming soon</h1>
+    </main>
+  );
+}

@@ -1,8 +1,8 @@
-// import { ArrowLeft, Package, Shield, Zap } from 'lucide-react';
-// import Link from 'next/link';
-// import { notFound } from 'next/navigation';
-// import ReactMarkdown from 'react-markdown';
-// import ProductGallery from '@/app/components/ProductGallery';
+import { ArrowLeft, Package, Shield, Zap } from 'lucide-react';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import ProductGallery from '@/app/components/ProductGallery';
 
 // async function getProduct(slug: string) {
 //   const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://127.0.0.1:1337";
@@ -143,3 +143,11 @@
 //     </main>
 //   );
 // }
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1>Products coming soon</h1>
+    </main>
+  );
+}

@@ -1,5 +1,5 @@
-// "use client"; // This is required for interactivity and useState
-// import { useState } from 'react';
+"use client"; // This is required for interactivity and useState
+import { useState } from 'react';
 
 // export default function ProductGallery({ images, STRAPI_URL, productName }: any) {
 //   // 1. Initialize state with the first image
@@ -48,3 +48,11 @@
 //     </div>
 //   );
 // }
+
+export default function ProductGallery() {
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      <h1>Products coming soon</h1>
+    </main>
+  );
+}
