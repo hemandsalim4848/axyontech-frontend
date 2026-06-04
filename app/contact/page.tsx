@@ -33,14 +33,13 @@ export default function ContactPage() {
                 <div className="group">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Phone</p>
                   <p className="text-xl text-black font-semibold group-hover:text-[#18aed1] transition-colors cursor-pointer">
-                    +1 (234) 567-890
+                    +971 521440379
                   </p>
                 </div>
                 <div className="group">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Headquarters</p>
                   <p className="text-xl text-black font-semibold">
-                    Silicon Drive, Tech Plaza <br />
-                    Suite 405, Digital District
+                    Hyderabad, India
                   </p>
                 </div>
               </div>
