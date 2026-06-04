@@ -45,8 +45,8 @@ export default function Footer() {
             <h4 className="text-[#18aed1] font-bold mb-6 uppercase text-xs tracking-widest">Get In Touch</h4>
             <ul className="space-y-4 text-sm text-gray-300">
               <li>Email: sales@axyontech.com</li>
-              <li>Phone: +1 (234) 567-890</li>
-              <li>Address: Tech Plaza, Silicon Drive</li>
+              <li>Phone: +971 521440379</li>
+              <li>Address: Hyderabad, India</li>
             </ul>
           </div>
 

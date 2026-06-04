@@ -6,21 +6,21 @@ import Link from 'next/link';
 
 const SLIDES = [
   {
-    tag: "Next-Gen Mobile Cases",
-    title: "Kevlar",
-    titleStroke: "Cases",
-    desc: "Engineered with real Kevlar fibers, this case offers unmatched durability without compromising on style.",
-    img: "https://aztechmea.com/wp-content/uploads/2025/12/kevlar_sunset_15_-16.png",
-    badgeLabel: "New Release",
-    badgeTitle: "For Iphone 16 Pro",
+    tag: "Crystal-Clear Defense",
+    title: "Screen",
+    titleStroke: "Armor",
+    desc: "Invisible protection with military-grade toughness. Keep your display flawless with edge-to-edge coverage, anti-scratch technology, and ultra-smooth touch response.",
+    img: "https://aztechmea.com/wp-content/uploads/2026/06/SHATTERPROOF.webp", // Replace with screen protector image
+    badgeLabel: "Top Pick",
+    badgeTitle: "Premium Tempered Glass",
     link: "/products"
-  },
+},
   {
     tag: "High-Performance Power Delivery",
     title: "Power",
     titleStroke: "Efficiency",
     desc: "Reliable and energy-efficient power supply units engineered to deliver stable performance, advanced protection, and consistent power for gaming, workstation, and enterprise systems.",
-    img: "https://aztechmea.com/wp-content/uploads/2026/06/pwer-supply-unit.png", // Replace with your image
+    img: "https://aztechmea.com/wp-content/uploads/2026/06/PSU-1.webp", // Replace with your image
     badgeLabel: "80 PLUS Certified",
     badgeTitle: "Premium PSU Series",
     link: "/products"
@@ -30,7 +30,7 @@ const SLIDES = [
     title: "Smart",
     titleStroke: "Interaction",
     desc: "Advanced interactive flat panels designed to enhance classrooms, meeting rooms, and collaborative spaces with responsive touch technology, vibrant visuals, and seamless connectivity.",
-    img: "https://aztechmea.com/wp-content/uploads/2025/12/Ideaflow-pro.png", // Replace with your image
+    img: "https://aztechmea.com/wp-content/uploads/2026/06/IFP-1.webp", // Replace with your image
     badgeLabel: "Multi-Touch Display",
     badgeTitle: "Interactive Panel Series",
     link: "/products"

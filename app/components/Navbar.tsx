@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ArrowRight, LayoutGrid, Monitor, Cpu, Speaker, Zap } from 'lucide-react';
+import { ChevronDown, ArrowRight, LayoutGrid, Monitor, Cpu, Speaker, Zap, X } from 'lucide-react';
 
 const CATEGORIES = [
   { 
@@ -39,14 +40,30 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', product: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  function handleQuoteSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setIsQuoteOpen(false);
+      setSubmitted(false);
+      setFormData({ name: '', email: '', phone: '', product: '', message: '' });
+    }, 2500);
+  }
+
   return (
+    <>
     <nav className={`fixed w-full z-[100] transition-all duration-500 ${
       scrolled ? 'bg-white/80 backdrop-blur-md py-2 shadow-sm' : 'bg-white py-4'
     }`}>
@@ -119,9 +136,9 @@ export default function Navbar() {
 
           {/* Action Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="bg-black text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-[#18aed1] hover:shadow-lg hover:shadow-[#18aed1]/30 transition-all">
+            <button onClick={() => setIsQuoteOpen(true)} className="bg-black text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-[#18aed1] hover:shadow-lg hover:shadow-[#18aed1]/30 transition-all">
               Get a Quote
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Button Code (Same as yours but kept for layout) */}
@@ -155,6 +172,124 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+
+    {/* Quote Modal — rendered in a portal so it's always viewport-centered */}
+    {mounted && createPortal(
+      <AnimatePresence>
+        {isQuoteOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"
+            onClick={(e) => { if (e.target === e.currentTarget) setIsQuoteOpen(false); }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 20 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              className="bg-white rounded-[2rem] shadow-2xl w-full max-w-lg p-8 relative"
+            >
+              <button onClick={() => setIsQuoteOpen(false)} className="absolute top-5 right-5 text-gray-400 hover:text-black transition-colors">
+                <X size={20} />
+              </button>
+
+              {submitted ? (
+                <div className="py-12 text-center">
+                  <div className="w-16 h-16 rounded-full bg-[#18aed1]/10 flex items-center justify-center mx-auto mb-4">
+                    <ArrowRight size={28} className="text-[#18aed1]" />
+                  </div>
+                  <h3 className="text-2xl font-black text-black mb-2">Request Sent!</h3>
+                  <p className="text-gray-500 text-sm">We'll get back to you within 24 hours.</p>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#18aed1]">Quick Quote</span>
+                    <h2 className="text-2xl font-black text-black mt-1">Get a Quote</h2>
+                    <p className="text-gray-400 text-xs mt-1">Fill in the details and our team will reach out shortly.</p>
+                  </div>
+
+                  <form onSubmit={handleQuoteSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1 block">Name</label>
+                        <input
+                          required
+                          type="text"
+                          placeholder="Your name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#18aed1] transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1 block">Phone</label>
+                        <input
+                          type="tel"
+                          placeholder="+1 234 567 890"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#18aed1] transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1 block">Email</label>
+                      <input
+                        required
+                        type="email"
+                        placeholder="you@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#18aed1] transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1 block">Product of Interest</label>
+                      <select
+                        value={formData.product}
+                        onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+                        className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-600 focus:outline-none focus:border-[#18aed1] transition-colors"
+                      >
+                        <option value="">Select a product</option>
+                        {CATEGORIES.map((c) => (
+                          <option key={c.name} value={c.name}>{c.name}</option>
+                        ))}
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1 block">Message</label>
+                      <textarea
+                        rows={3}
+                        placeholder="Tell us about your requirements..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm resize-none focus:outline-none focus:border-[#18aed1] transition-colors"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-black text-white py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-[#18aed1] hover:shadow-lg hover:shadow-[#18aed1]/30 transition-all"
+                    >
+                      Submit Request
+                    </button>
+                  </form>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>,
+      document.body
+    )}
+  </>
   );
 }
 
