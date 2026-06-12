@@ -31,48 +31,29 @@ return ( <section className="py-24 px-6 bg-white border-y border-gray-100 overfl
       </div>
 
       {/* Right Side */}
-      <div className="lg:col-span-7">
+      <div className="lg:col-span-7 space-y-8">
 
-        <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-3xl">
-          AXYONTECH delivers innovative technology solutions across
-          interactive displays, digital signage, mounting systems,
-          mobile accessories, gaming components, and enterprise
-          hardware. We bridge the gap between leading manufacturers
-          and businesses seeking reliable, high-performance technology
-          for modern environments.
+        <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+          AXYONTECH bridges the gap between leading global manufacturers and businesses that need reliable, high-performance technology — built for the demands of modern environments.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-
-          <div>
-            <h3 className="text-3xl font-bold text-black mb-2">15+</h3>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-              Brand Partners
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-black mb-2">500+</h3>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-              Products
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-black mb-2">2K+</h3>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-              Clients Served
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-black mb-2">24/7</h3>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-              Support
-            </p>
-          </div>
-
-        </div>
+<ul className="space-y-3">
+          {[
+            "Interactive displays & digital signage",
+            "Mounting systems & mobile accessories",
+            "Gaming components & enterprise hardware",
+            "Scalable solutions tailored to evolving business needs",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
+              <span className="mt-[3px] w-4 h-4 flex-shrink-0 flex items-center justify-center bg-[#18aed1]/10 text-[#18aed1]">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                  <path d="M1 4l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
 
       </div>
 
